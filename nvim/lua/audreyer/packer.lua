@@ -38,9 +38,41 @@ packer.startup({
 	function(use)
 			-- Packer manager
 			use("wbthomason/packer.nvim")
-		
+			-- Html tag
+			use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose and autorename html tag with treesitter
 			-- Colorscheme
 			use("folke/tokyonight.nvim")
+			-- File Explorer
+			use
+			{
+				'nvim-tree/nvim-tree.lua',
+				requires =
+				{
+					'nvim-tree/nvim-web-devicons', -- optional
+				},
+	 		}
+			-- Comment
+			use 'numToStr/Comment.nvim'
+			-- Colorizer
+			use 'NvChad/nvim-colorizer.lua'
+			-- Icon
+			use 'nvim-tree/nvim-web-devicons'
+			-- Status Line
+			use
+			{
+				'nvim-lualine/lualine.nvim',
+				requires =
+				{
+					'nvim-tree/nvim-web-devicons', opt = true
+				},
+			}
+			use
+			{
+				"nvim-treesitter/nvim-treesitter",
+				run = function()
+					pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+				end,
+			}
 	end,
 	config = {
 		display = {

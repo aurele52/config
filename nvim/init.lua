@@ -1,4 +1,5 @@
 require("audreyer")
 require("audreyer/options")
 require("audreyer/packer")
+require("audreyer/keymaps")
 print("Hello")
