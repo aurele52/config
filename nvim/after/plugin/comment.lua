@@ -1,6 +1,6 @@
-local comment_status, comment = pcall(require, 'comment')
+local comment_status, comment = pcall(require, 'Comment')
 if not comment_status then
 	return
 end
 
-comment.setup()
+require('Comment').setup()
