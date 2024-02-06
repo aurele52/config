@@ -4,6 +4,8 @@
 
 local vim = vim
 
+vim.cmd[[autocmd FileType typescript setlocal expandtab tabstop=2 shiftwidth=2]]
+
 -- Disable netw for nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
